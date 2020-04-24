@@ -1,7 +1,7 @@
 // set newsList variable as html ul element id
 
 let newsList = document.getElementById("news");
-
+let sourceList = document.getElementById("sources");
 // set list of articles as articles in the news.js array mapped using literals
 
 let articlesList = news.articles.map(function (article) {
@@ -23,3 +23,14 @@ let articlesList = news.articles.map(function (article) {
 // populated html from articlesList
 
 newsList.innerHTML = articlesList.join(" ");
+
+// set sourcesList variable as html element id
+
+let sourcesList = sources.sources.map(function (source) {
+  let sourceInList = `<li class="nav-item">
+            <a class="nav-link active" href="#">${source.name}</a>
+            </li>`;
+  return sourceInList;
+});
+
+sourceList.innerHTML = sourcesList.join(" ");
